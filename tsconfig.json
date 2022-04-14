@@ -1,0 +1,18 @@
+{
+    "extends": "./tsconfig.paths.json",
+    "exclude": ["node_modules"],
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "node",
+        "lib": ["esnext", "dom"],
+        "strict": true,
+        "jsx": "react",
+        "allowJs": false,
+        "checkJs": false,
+        "esModuleInterop": true,
+        "noEmit": true,
+        "noErrorTruncation": true,
+        "types": ["react", "react-dom", "jest", "react-test-renderer"]
+    }
+}
