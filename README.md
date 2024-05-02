@@ -18,7 +18,7 @@ Next, you can start the development server:
 npm start
 ```
 
-## Available Scripts
+## Available scripts
 
 In the project directory, you can run:
 
@@ -30,7 +30,7 @@ Runs the app in the development mode. Open http://localhost:8080 to view it in t
 APP_DEV_SERVER_PORT=8080
 ```
 
-### `npm run bundle`
+### `npm run build`
 
 Builds the app for production to the `dist/bundle` folder. It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
 
@@ -58,15 +58,37 @@ Fixes all the automatically fixable issues.
 
 ### `npm run test:unit:check`
 
-Runs unit tests and place the coverage report under `reports/tests/unit/coverage`.
+Runs unit tests and place the report under `reports/tests/unit`.
 
 ### `npm run test:unit:update`
 
-Updates the snapshots.
+Updates the `Jest` snapshots.
+
+### `npm run test:e2e:check`
+
+Runs e2e tests with `Playwright` and place the report under `reports/tests/e2e`.
+
+Before using this script, the application needs to be built with `npm run build`.
+
+### `npm run test:e2e:update`
+
+Updates the `Playwright` snapshots.
+
+Before using this script, the application needs to be built with `npm run build`.
 
 ### `npm run audit:check`
 
 Executes an audit on dependencies regarding security vulnerabilities.
+
+### `npm run install:playwright`
+
+Installs `Playwright` dependencies (browser, etc).
+
+### `npm run serve`
+
+It starts the `http-server` (on a fixed port (8080) for now) and serves the content from the `dist/bundle` folder.
+
+Before using this script, the application needs to be built with `npm run build`.
 
 ## Contributing
 
