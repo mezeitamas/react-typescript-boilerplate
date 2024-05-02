@@ -11,7 +11,8 @@ export default defineConfig({
             stylePath: './tests/screenshot.css'
         }
     },
-    fullyParallel: true,
+    snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}-{projectName}.snap{ext}',
+    fullyParallel: false,
     forbidOnly: process.env.CI !== undefined,
     retries: 0,
     workers: 1,
