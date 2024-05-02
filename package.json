@@ -26,8 +26,8 @@
         "start": "webpack serve --config webpack.serve.config.js"
     },
     "engines": {
-        "node": ">=22.0.0",
-        "npm": ">=10.5.1"
+        "node": ">=22.1.0",
+        "npm": ">=10.7.0"
     },
     "dependencies": {
         "react": "18.3.1",
