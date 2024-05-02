@@ -1,0 +1,23 @@
+{
+    "name": "react-typescript-boilerplate",
+    "image": "mcr.microsoft.com/devcontainers/base:bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22.1.0"
+        }
+    },
+    "postCreateCommand": "npm install && npm run install:playwright",
+    "customizations": {
+        "vscode": {
+            "settings": {},
+            "extensions": [
+                "EditorConfig.EditorConfig",
+                "esbenp.prettier-vscode",
+                "dbaeumer.vscode-eslint",
+                "redhat.vscode-yaml",
+                "ms-playwright.playwright"
+            ]
+        }
+    }
+}
