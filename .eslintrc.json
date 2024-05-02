@@ -1,10 +1,11 @@
 {
-    "plugins": ["@typescript-eslint", "react", "react-hooks", "jest", "testing-library"],
+    "plugins": ["@typescript-eslint", "react", "react-hooks", "jsx-a11y", "jest", "testing-library"],
     "extends": [
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
         "plugin:import/typescript",
+        "plugin:jsx-a11y/recommended",
         "plugin:jest/recommended",
         "plugin:jest/style",
         "plugin:testing-library/react"
@@ -97,7 +98,13 @@
             {
                 "missingExports": true,
                 "unusedExports": true,
-                "ignoreExports": ["src/**/index.ts", "src/**/index.tsx", "src/**/*.test.*", "*.config.js"]
+                "ignoreExports": [
+                    "src/**/index.{js,jsx,ts,tsx}",
+                    "src/**/*.test.{js,jsx,ts,tsx}",
+                    "tests/**/*.spec.{js,jsx,ts,tsx}",
+                    "*.config.{js,ts}",
+                    "types/**/*.d.ts"
+                ]
             }
         ],
         "import/no-useless-path-segments": "error",

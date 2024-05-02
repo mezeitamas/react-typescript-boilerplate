@@ -5,11 +5,11 @@ import { Dummy } from '@/shared';
 
 const App: FunctionComponent = (): ReactElement => {
     return (
-        <div>
+        <main role="main">
             <h1>Hello, world!</h1>
 
             <Dummy />
-        </div>
+        </main>
     );
 };
 
