@@ -1,21 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { merge } = require('webpack-merge');
-const { SubresourceIntegrityPlugin } = require('webpack-subresource-integrity');
 
-const webpackCommonConfig = require('./webpack.common.config');
+const rspackCommonConfig = require('./rspack.common.config');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
-const webpackConfig = {
+const rspackConfig = {
     mode: 'production',
     output: {
         crossOriginLoading: 'anonymous'
     },
     plugins: [
-        new SubresourceIntegrityPlugin({
-            hashFuncNames: ['sha256', 'sha384', 'sha512']
-        }),
-
         new BundleAnalyzerPlugin({
             openAnalyzer: false,
             analyzerMode: 'static',
@@ -26,4 +21,4 @@ const webpackConfig = {
     ]
 };
 
-module.exports = merge(webpackCommonConfig, webpackConfig);
+module.exports = merge(rspackCommonConfig, rspackConfig);
