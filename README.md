@@ -1,6 +1,6 @@
-# React with TypeScript and Webpack template
+# React with TypeScript and rspack template
 
-This repository serves as a starting point for creating a React application using TypeScript and Webpack.
+This repository serves as a starting point for creating a React application using TypeScript and rspack.
 
 ## Getting started
 

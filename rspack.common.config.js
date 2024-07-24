@@ -1,13 +1,12 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require('node:path');
 
-const CircularDependencyPlugin = require('circular-dependency-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const packageJson = require('./package.json');
 /* eslint-enable @typescript-eslint/no-var-requires */
 
-const webpackCommonConfig = {
+const rspackCommonConfig = {
     target: 'web',
     bail: true,
     devtool: 'source-map',
@@ -39,18 +38,9 @@ const webpackCommonConfig = {
         new HtmlWebpackPlugin({
             template: './src/index.html',
             title: packageJson.name
-        }),
-
-        new CircularDependencyPlugin({
-            exclude: /node_modules/,
-            include: /src/,
-            failOnError: true,
-            allowAsyncCycles: false,
-            cwd: process.cwd()
         })
     ],
     optimization: {
-        emitOnErrors: false,
         splitChunks: {
             chunks: 'all'
         }
@@ -60,4 +50,4 @@ const webpackCommonConfig = {
     }
 };
 
-module.exports = webpackCommonConfig;
+module.exports = rspackCommonConfig;
