@@ -8,6 +8,10 @@
         "type": "git",
         "url": "git@github.com:mezeitamas/react-typescript-boilerplate.git"
     },
+    "engines": {
+        "node": ">=22.5.1",
+        "npm": ">=10.8.2"
+    },
     "scripts": {
         "install:playwright": "playwright install --with-deps",
         "clean": "rimraf dist/ reports/",
@@ -24,10 +28,6 @@
         "build": "webpack --config webpack.config.js",
         "serve": "http-server ./dist/bundle/ --port 8080",
         "start": "webpack serve --config webpack.serve.config.js"
-    },
-    "engines": {
-        "node": ">=22.1.0",
-        "npm": ">=10.7.0"
     },
     "dependencies": {
         "react": "18.3.1",
