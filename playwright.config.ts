@@ -5,13 +5,17 @@ config();
 
 export default defineConfig({
     testDir: './tests',
+    snapshotPathTemplate: '{testDir}/__screenshots__/{testFilePath}/{arg}{-projectName}{ext}',
     expect: {
+        timeout: 10_000,
+        toPass: {
+            timeout: 15_000
+        },
         toHaveScreenshot: {
             maxDiffPixelRatio: 0.01,
             stylePath: './tests/screenshot.css'
         }
     },
-    snapshotPathTemplate: '{testDir}/{testFilePath}-snapshots/{arg}-{projectName}.snap{ext}',
     fullyParallel: false,
     forbidOnly: process.env.CI !== undefined,
     retries: 0,

@@ -10,6 +10,7 @@ To get started, clone the repository and install the dependencies:
 git clone git@github.com:mezeitamas/react-typescript-boilerplate.git
 cd react-typescript-boilerplate
 npm install
+npm run install:playwright
 ```
 
 Next, you can start the development server:
