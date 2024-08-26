@@ -1,9 +1,9 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-require-imports */
 const dotenv = require('dotenv');
 const { merge } = require('webpack-merge');
 
 const rspackCommonConfig = require('./rspack.common.config');
-/* eslint-enable @typescript-eslint/no-var-requires */
+/* eslint-enable @typescript-eslint/no-require-imports */
 
 // Prepare the environtment variables
 dotenv.config();

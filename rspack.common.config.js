@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('node:path');
 
 const rspack = require('@rspack/core');
 
 const packageJson = require('./package.json');
-/* eslint-enable @typescript-eslint/no-var-requires */
+/* eslint-enable @typescript-eslint/no-require-imports */
 
 const rspackCommonConfig = {
     target: 'web',
