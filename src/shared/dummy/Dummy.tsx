@@ -1,8 +1,13 @@
 import React from 'react';
 import type { FunctionComponent, ReactElement } from 'react';
 
-const Dummy: FunctionComponent = (): ReactElement => {
-    return <h1>Hello, DUMMY!</h1>;
+type DummyProps = {
+    readonly name: string;
+    readonly upperCase?: boolean;
+};
+
+const Dummy: FunctionComponent<DummyProps> = ({ name, upperCase }): ReactElement => {
+    return <h1>Hello, {upperCase === true ? name.toUpperCase() : name}!</h1>;
 };
 
 export { Dummy };

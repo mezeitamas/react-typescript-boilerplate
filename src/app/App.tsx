@@ -8,7 +8,10 @@ const App: FunctionComponent = (): ReactElement => {
         <main role="main">
             <h1>Hello, world!</h1>
 
-            <Dummy />
+            <Dummy
+                name="Dummy"
+                upperCase={true}
+            />
         </main>
     );
 };
