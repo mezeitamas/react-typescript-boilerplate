@@ -2,6 +2,8 @@
 
 exports[`<Dummy /> should render 1`] = `
 <h1>
-  Hello, DUMMY!
+  Hello, 
+  DUMMY
+  !
 </h1>
 `;

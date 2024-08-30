@@ -10,7 +10,12 @@ describe('<Dummy />', () => {
 
         // When
         const renderer = new ShallowRenderer();
-        const view = renderer.render(<Dummy />);
+        const view = renderer.render(
+            <Dummy
+                name="Dummy"
+                upperCase={true}
+            />
+        );
 
         // Then
         expect(view).toMatchSnapshot();

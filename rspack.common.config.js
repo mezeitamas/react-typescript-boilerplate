@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable @typescript-eslint/no-require-imports */
 const path = require('node:path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const rspack = require('@rspack/core');
 
 const packageJson = require('./package.json');
-/* eslint-enable @typescript-eslint/no-var-requires */
+/* eslint-enable @typescript-eslint/no-require-imports */
 
 const rspackCommonConfig = {
     target: 'web',
@@ -35,7 +35,7 @@ const rspackCommonConfig = {
         ]
     },
     plugins: [
-        new HtmlWebpackPlugin({
+        new rspack.HtmlRspackPlugin({
             template: './src/index.html',
             title: packageJson.name
         })

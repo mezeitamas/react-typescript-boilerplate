@@ -29,7 +29,7 @@ export default defineConfig({
         ['github']
     ],
     use: {
-        baseURL: `http://localhost:${process.env.APP_DEV_SERVER_PORT}`,
+        baseURL: `http://localhost:${process.env.APP_DEV_SERVER_PORT ?? '8080'}`,
         trace: 'on-first-retry'
     },
     projects: [
@@ -41,7 +41,7 @@ export default defineConfig({
     webServer: {
         command: 'npm run serve',
         timeout: 60_000,
-        url: `http://localhost:${process.env.APP_DEV_SERVER_PORT}`,
+        url: `http://localhost:${process.env.APP_DEV_SERVER_PORT ?? '8080'}`,
         reuseExistingServer: process.env.CI === undefined
     }
 });
