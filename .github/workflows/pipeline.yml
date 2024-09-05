@@ -84,7 +84,7 @@ jobs:
         if: always()
         with:
           name: bundle-reports
-          path: reports/bundle/.rsdoctor/
+          path: reports/bundle/
           retention-days: 3
 
       - name: Upload bundle reports
