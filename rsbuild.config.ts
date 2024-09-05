@@ -9,23 +9,28 @@ export default defineConfig({
     },
     tools: {
         rspack(config, { appendPlugins }) {
-            appendPlugins(
-                new RsdoctorRspackPlugin({
-                    disableClientServer: true,
-                    features: ['loader', 'plugins', 'bundle'],
-                    mode: 'brief',
-                    reportDir: `${__dirname}/reports/bundle/`,
-                    brief: {
-                        reportHtmlName: 'report.html',
-                        writeDataJson: true
-                    }
-                })
-            );
+            // Only register the Rsdoctoe plugin when the mode is in production, not when we are running the dev server
+            if (process.env.NODE_ENV === 'production') {
+                appendPlugins(
+                    new RsdoctorRspackPlugin({
+                        disableClientServer: true,
+                        features: ['loader', 'plugins', 'bundle'],
+                        mode: 'brief',
+                        reportDir: `${__dirname}/reports/bundle/`,
+                        brief: {
+                            reportHtmlName: 'report.html',
+                            writeDataJson: true
+                        }
+                    })
+                );
+            }
         }
     },
     output: {
         target: 'web',
+        cleanDistPath: true,
         distPath: {
+            root: './dist/bundle',
             js: '',
             css: ''
         }
