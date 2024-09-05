@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const { merge } = require('webpack-merge');
 
 const rspackCommonConfig = require('./rspack.common.config');
@@ -9,16 +8,7 @@ const rspackConfig = {
     mode: 'production',
     output: {
         crossOriginLoading: 'anonymous'
-    },
-    plugins: [
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-            analyzerMode: 'static',
-            generateStatsFile: true,
-            reportFilename: `${__dirname}/reports/bundle/report.html`,
-            statsFilename: `${__dirname}/reports/bundle/stats.json`
-        })
-    ]
+    }
 };
 
 module.exports = merge(rspackCommonConfig, rspackConfig);
