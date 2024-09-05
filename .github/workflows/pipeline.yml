@@ -47,7 +47,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: unit-test-reports
+          name: reports-unit-test
           path: reports/tests/unit/
           retention-days: 3
 
@@ -123,6 +123,6 @@ jobs:
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: e2e-test-reports
+          name: reports-e2e-test
           path: reports/tests/e2e/
           retention-days: 3
