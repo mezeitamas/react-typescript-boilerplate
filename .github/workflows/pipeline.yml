@@ -84,7 +84,8 @@ jobs:
         if: always()
         with:
           name: reports-bundle
-          path: reports/bundle/
+          include-hidden-files: true
+          path: reports/bundle/.rsdoctor/
           retention-days: 3
 
   test:
