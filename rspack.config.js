@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { RsdoctorRspackPlugin } = require('@rsdoctor/rspack-plugin');
 const { merge } = require('webpack-merge');
 
 const rspackCommonConfig = require('./rspack.common.config');
@@ -11,12 +11,15 @@ const rspackConfig = {
         crossOriginLoading: 'anonymous'
     },
     plugins: [
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-            analyzerMode: 'static',
-            generateStatsFile: true,
-            reportFilename: `${__dirname}/reports/bundle/report.html`,
-            statsFilename: `${__dirname}/reports/bundle/stats.json`
+        new RsdoctorRspackPlugin({
+            disableClientServer: true,
+            features: ['loader', 'plugins', 'bundle'],
+            mode: 'brief',
+            reportDir: `${__dirname}/reports/bundle/`,
+            brief: {
+                reportHtmlName: 'report.html',
+                writeDataJson: true
+            }
         })
     ]
 };
