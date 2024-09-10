@@ -7,7 +7,7 @@ test.describe('App', () => {
     });
 
     test('should have a title', async ({ page }) => {
-        await expect(page).toHaveTitle(/react-typescript-boilerplate/);
+        await expect(page).toHaveTitle(/Title/);
     });
 
     test('should not have any automatically detectable accessibility issues', async ({ page }) => {
