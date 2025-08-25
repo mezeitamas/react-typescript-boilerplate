@@ -16,7 +16,9 @@ export default defineConfig({
                         disableClientServer: true,
                         features: ['loader', 'plugins', 'bundle'],
                         mode: 'brief',
-                        reportDir: `${__dirname}/reports/bundle/`,
+                        output: {
+                            reportDir: `${__dirname}/reports/bundle/`
+                        },
                         brief: {
                             reportHtmlName: 'report.html',
                             writeDataJson: true
@@ -35,7 +37,7 @@ export default defineConfig({
             css: ''
         }
     },
-    source: {
+    resolve: {
         alias: {
             '@/shared': './src/shared'
         }

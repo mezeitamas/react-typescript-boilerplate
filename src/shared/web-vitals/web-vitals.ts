@@ -1,13 +1,13 @@
-import { onCLS, onFID, onLCP } from 'web-vitals';
-import type { ReportCallback } from 'web-vitals';
+import { onCLS, onINP, onLCP } from 'web-vitals';
+import type { CLSMetric, INPMetric, LCPMetric } from 'web-vitals';
 
 const addWebVitalsReporting = () => {
-    const logToConsole: ReportCallback = ({ name, id, delta, rating }) => {
-        console.log(`${name} matching ID ${id} changed by ${String(delta)} and the rating is ${String(rating)}`);
+    const logToConsole = ({ name, id, delta, rating }: CLSMetric | INPMetric | LCPMetric) => {
+        console.log(`${name} matching ID ${id} changed by ${String(delta)} and the rating is ${rating}`);
     };
 
     onCLS(logToConsole);
-    onFID(logToConsole);
+    onINP(logToConsole);
     onLCP(logToConsole);
 };
 

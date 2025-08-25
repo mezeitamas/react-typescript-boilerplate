@@ -1,9 +1,4 @@
-/*
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
-module.exports = {
+export default {
     // All imported modules in your tests should be mocked automatically
     automock: false,
 
