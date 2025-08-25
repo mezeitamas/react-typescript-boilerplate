@@ -7,6 +7,16 @@ export default defineConfig({
     html: {
         template: './src/index.html'
     },
+    // @ts-expect-error: accodring to the documentation it is correct
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['postcss-loader'],
+                type: 'css'
+            }
+        ]
+    },
     tools: {
         rspack(config, { appendPlugins }) {
             // Only register the Rsdoctoe plugin when the mode is in production, not when we are running the dev server
