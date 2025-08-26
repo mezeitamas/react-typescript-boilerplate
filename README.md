@@ -59,11 +59,11 @@ Fixes all the automatically fixable issues.
 
 ### `npm run test:unit:check`
 
-Runs unit tests and place the report under `reports/tests/unit`.
+Runs unit tests.
 
 ### `npm run test:unit:update`
 
-Updates the `Jest` snapshots.
+Updates the `Rstest` snapshots.
 
 ### `npm run test:e2e:check`
 
