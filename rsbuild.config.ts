@@ -3,6 +3,9 @@ import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
 import { CircularDependencyRspackPlugin, experiments } from '@rspack/core';
+import { config } from 'dotenv';
+
+config();
 
 const { SubresourceIntegrityPlugin } = experiments;
 
