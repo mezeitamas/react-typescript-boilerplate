@@ -40,6 +40,9 @@ jobs:
       - name: Type check
         run: npm run type:check
 
+      - name: Unit test check
+        run: npm run test:unit:check
+
       - name: Upload unit test reports
         uses: actions/upload-artifact@v4
         if: always()

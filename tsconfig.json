@@ -14,6 +14,6 @@
         "resolveJsonModule": true,
         "noEmit": true,
         "noErrorTruncation": true,
-        "types": ["react", "react-dom", "jest"]
+        "types": ["react", "react-dom"]
     }
 }

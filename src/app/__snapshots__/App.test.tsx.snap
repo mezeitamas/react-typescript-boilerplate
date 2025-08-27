@@ -1,0 +1,16 @@
+// Rstest Snapshot v1
+
+exports[`<App /> > should render 1`] = `
+<DocumentFragment>
+  <main
+    role="main"
+  >
+    <h1>
+      Hello, world!
+    </h1>
+    <h1>
+      Hello, DUMMY!
+    </h1>
+  </main>
+</DocumentFragment>
+`;
