@@ -9,7 +9,7 @@ export default defineConfig({
     },
     tools: {
         rspack(config, { appendPlugins }) {
-            // Only register the Rsdoctoe plugin when the mode is in production, not when we are running the dev server
+            // Only register the Rsdoctor plugin when the mode is in production, not when we are running the dev server
             if (process.env.NODE_ENV === 'production') {
                 appendPlugins(
                     new RsdoctorRspackPlugin({
