@@ -17,7 +17,19 @@
                 "dbaeumer.vscode-eslint",
                 "redhat.vscode-yaml",
                 "ms-playwright.playwright"
-            ]
+            ],
+            "mcp": {
+                "servers": {
+                    "playwright": {
+                        "command": "npx",
+                        "args": ["@playwright/mcp@latest"]
+                    },
+                    "rsdoctor": {
+                        "command": "npx",
+                        "args": ["-y", "@rsdoctor/mcp-server@latest"]
+                    }
+                }
+            }
         }
     }
 }
