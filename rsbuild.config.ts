@@ -1,17 +1,30 @@
 import { defineConfig } from '@rsbuild/core';
 import { pluginReact } from '@rsbuild/plugin-react';
+import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { RsdoctorRspackPlugin } from '@rsdoctor/rspack-plugin';
+import { CircularDependencyRspackPlugin, experiments } from '@rspack/core';
+
+const { SubresourceIntegrityPlugin } = experiments;
 
 export default defineConfig({
-    plugins: [pluginReact()],
+    plugins: [pluginReact(), pluginSvgr()],
     html: {
         template: './src/index.html'
     },
     tools: {
         rspack(config, { appendPlugins }) {
+            // This is recommended by the SubresourceIntegrityPlugin
+            // https://rspack.rs/plugins/rspack/subresource-integrity-plugin#recommended-rspack-configuration
+            config.output.crossOriginLoading = 'anonymous';
+
             // Only register the Rsdoctoe plugin when the mode is in production, not when we are running the dev server
             if (process.env.NODE_ENV === 'production') {
-                appendPlugins(
+                appendPlugins([
+                    new CircularDependencyRspackPlugin({
+                        failOnError: true,
+                        exclude: /node_modules/
+                    }),
+                    new SubresourceIntegrityPlugin(),
                     new RsdoctorRspackPlugin({
                         disableClientServer: true,
                         features: ['loader', 'plugins', 'bundle'],
@@ -24,7 +37,7 @@ export default defineConfig({
                             writeDataJson: true
                         }
                     })
-                );
+                ]);
             }
         }
     },
