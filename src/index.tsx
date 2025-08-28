@@ -7,6 +7,8 @@ import { addWebVitalsReporting } from '@/shared';
 
 import { App } from './app/App';
 
+import './index.css';
+
 const rootElement = document.getElementById('root');
 
 if (rootElement === null) {
