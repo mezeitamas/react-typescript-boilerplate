@@ -57,3 +57,16 @@ You provide accurate, factual, thoughtful answers, and are a genius at reasoning
 
 - Wrap client components in Suspense with fallback.
 - Use dynamic loading for non-critical components.
+- Use `useCallback()` for callback functions passed as props to child components.
+- Use `useMemo()` for expensive calculations that depend on specific dependencies.
+- Avoid creating functions inside JSX attributes; prefer memoized callbacks.
+- When in doubt about optimization, prioritize `useCallback()` for functions passed as props.
+
+## React Hooks Best Practices
+
+- Always wrap callback functions passed as props with `useCallback()`.
+- Use empty dependency arrays `[]` for callbacks with no dependencies.
+- Include all dependencies in the dependency array to avoid stale closures.
+- Prefer `useCallback()` over inline function declarations in component bodies.
+- Use `useMemo()` for expensive computations to prevent unnecessary recalculations.
+- Ensure proper dependency arrays to maintain referential equality for child component optimization.
