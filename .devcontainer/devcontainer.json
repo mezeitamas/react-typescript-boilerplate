@@ -14,7 +14,7 @@
             "extensions": [
                 "EditorConfig.EditorConfig",
                 "esbenp.prettier-vscode",
-                "dbaeumer.vscode-eslint",
+                "rstack.rslint",
                 "redhat.vscode-yaml",
                 "ms-playwright.playwright"
             ],
