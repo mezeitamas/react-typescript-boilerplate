@@ -217,12 +217,7 @@ export default pluginTs.config(
                     forms: false
                 }
             ],
-            'react/jsx-no-undef': [
-                'error',
-                {
-                    allowGlobals: false
-                }
-            ],
+            'react/jsx-no-undef': 'off',
             'react/jsx-no-useless-fragment': [
                 'error',
                 {
@@ -357,7 +352,7 @@ export default pluginTs.config(
                     skipUndeclared: false
                 }
             ],
-            'react/react-in-jsx-scope': 'error',
+            'react/react-in-jsx-scope': 'off',
             'react/require-default-props': 'off',
             'react/require-optimization': 'off',
             'react/require-render-return': 'error',

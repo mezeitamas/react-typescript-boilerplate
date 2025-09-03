@@ -1,4 +1,3 @@
-import React from 'react';
 import type { FunctionComponent, ReactElement } from 'react';
 
 type DummyProps = {
