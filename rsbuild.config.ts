@@ -56,9 +56,7 @@ export default defineConfig({
         }
     },
     resolve: {
-        alias: {
-            '@/shared': './src/shared'
-        }
+        aliasStrategy: 'prefer-tsconfig'
     },
     output: {
         cleanDistPath: true,
