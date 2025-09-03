@@ -6,12 +6,16 @@ import { config } from 'dotenv';
 
 config();
 
-const { SubresourceIntegrityPlugin } = rspack.experiments;
-
 export default defineConfig({
     plugins: [pluginReact(), pluginSvgr()],
     html: {
-        template: './src/index.html'
+        template: './src/index.html',
+        crossorigin: 'anonymous'
+    },
+    security: {
+        sri: {
+            enable: 'auto'
+        }
     },
     // @ts-expect-error: accodring to the documentation it is correct
     module: {
@@ -34,8 +38,6 @@ export default defineConfig({
                     failOnError: true,
                     exclude: /node_modules/
                 }),
-
-                process.env.NODE_ENV === 'production' && new SubresourceIntegrityPlugin(),
 
                 process.env.NODE_ENV === 'production' &&
                     new RsdoctorRspackPlugin({
