@@ -17,22 +17,8 @@ export default defineConfig({
             enable: 'auto'
         }
     },
-    // @ts-expect-error: accodring to the documentation it is correct
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: ['postcss-loader'],
-                type: 'css'
-            }
-        ]
-    },
     tools: {
         rspack: {
-            target: 'browserslist',
-            output: {
-                crossOriginLoading: 'anonymous'
-            },
             plugins: [
                 new rspack.CircularDependencyRspackPlugin({
                     failOnError: true,
@@ -59,6 +45,7 @@ export default defineConfig({
         aliasStrategy: 'prefer-tsconfig'
     },
     output: {
+        target: 'web',
         cleanDistPath: true,
         distPath: {
             root: './dist/bundle',
