@@ -3,6 +3,7 @@
     "version": "3.0.0",
     "license": "MIT",
     "private": true,
+    "type": "module",
     "author": "Tamas Mezei",
     "repository": {
         "type": "git",
