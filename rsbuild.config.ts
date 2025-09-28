@@ -29,8 +29,8 @@ export default defineConfig({
                     new RsdoctorRspackPlugin({
                         disableClientServer: true,
                         features: ['loader', 'plugins', 'bundle'],
-                        mode: 'brief',
                         output: {
+                            mode: 'brief',
                             reportDir: `${__dirname}/reports/bundle/`
                         },
                         brief: {
